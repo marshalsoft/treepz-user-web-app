@@ -31,3 +31,6 @@ export interface UserProps {
 export interface PageProps {
     goBack?:()=>void;
 }
+export interface HistoryProps {
+    status?:"check-in"|"check-out"
+}

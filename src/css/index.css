@@ -230,3 +230,40 @@ color:var(--bs-gray);
   font-size: 13px;
   font-weight: bold;
 }
+.fs-7-b{
+  font-size: 12px;
+  font-weight: 500;
+}
+.fs-7{
+  font-size: 12px;
+}
+.list {
+  overflow: scroll;
+  height: 80vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.list-item {
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  position: relative;
+  border-bottom: solid 1px rgba(192, 192, 192, 0.4);
+}
+.list-item .lst {
+display: flex;
+justify-content:flex-end;
+align-items: flex-end;
+right: 10px;
+position: absolute;
+}
+.list-item:nth-last-child() {
+  border-bottom:none;
+  background-color: red;
+}
+.check-in{
+  color: green;
+}
+.check-out{
+  color: red;
+}
