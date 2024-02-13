@@ -1,0 +1,115 @@
+.bx{
+height: 44px;
+padding: 12px;
+border-radius: 8px;
+border:solid 1px #444;
+gap: 4px;
+display: flex;
+align-items: center;
+position: relative;
+
+}
+.bx a {
+    color: black;
+    text-decoration: none;
+}
+.bx .caret{
+ position: absolute;
+ right:10px;
+}
+.bx .tx{
+font-size: 14px;
+padding-left: 10px;
+ }
+ .dx-card{
+    width:"90%";
+    height: 114px;
+ }
+.black-card{
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+}
+.yellow-card{
+    border-radius: 12px;
+    background-color: rgba(248, 176, 43, 1);
+    color: black;
+}
+.gray-card{
+    border-radius: 12px;
+    background-color: rgba(243, 243, 244, 1);
+    color: black;
+}
+.dx-card .t1{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.dx-card .t2{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+.dx-card .circle{
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right:20px;
+    top:20px;
+}
+.dx-card .gt{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2px;
+    background-color:rgba(255, 255, 255, 0.44);
+    width: 60px;
+    height:20px;
+    padding: 2px, 3px, 2px, 3px;
+    border-radius: 4px;
+    font-size:12px;
+    color: limegreen;
+    font-weight: bold;
+}
+.text-2{
+    display: inline-block;
+    font-size: 13px;
+    padding-top: 10px;
+}
+.searchbar-container{
+position: relative;
+display: flex;
+align-items: center;
+}
+.close-btn{
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+}
+.searchbar-icon{
+    position: absolute;
+    top:8px;
+    left:20px;
+}
+.searchbar-container > input{
+padding-left: 30px;
+}
+.avatar{
+background-color: #FDF2D0;
+width: 80px;
+height:80px;
+border-radius: 100%;
+text-align: center;
+}
+.nameText{
+font-family: "Switzer";
+font-size: 20px;
+font-weight: 500;
+text-align: center;
+}
