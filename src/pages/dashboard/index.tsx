@@ -43,7 +43,7 @@ export default function DashboardScreen() {
     <div >
     <div className='row pb-3' >
 <div className='col-8' >
-  <div className='fw-bold' >Hi, Afolabi</div>
+  <div className='fw-bold' >Hi, Marshall</div>
   <div className='sub' >Monday, Oct 30, 2023 | 06:30:35 PM</div>
 </div>
 <div className='col-4 d-flex justify-content-end align-items-end' >

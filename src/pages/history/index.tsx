@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { Logo } from '../../components/Logo'
 import { LogoDesign } from '../../components/LogoDesign'
@@ -6,10 +7,7 @@ import BaseInput from '../../components/baseInput'
 import { NavLink, useNavigate} from 'react-router-dom'
 import { CONSTANTS } from '../../includes/constant'
 import { BaseButton, LightYellowButton } from '../../components/buttons'
-import { Formik } from 'formik';
 import * as y from 'yup';
-import { GoBackIcon } from '../../assets/icons/BackIcon'
-import { PostRequest } from '../../includes/functions'
 import { BackBtn } from '../../components/BackBtn'
 import { PageProps, UserProps } from '../../includes/types'
 import { BlackCallIcon, BlackChatIcon, CallIcon } from '../../assets/icons'

@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
 import { ScannerMarker, SuccessIcon } from "../../assets/icons";
 import { CloseIcon } from "../../assets/icons/CloseIcon";
@@ -10,8 +12,8 @@ export const CheckInModal = (props:UserProps & PageProps)=>{
     const [done,setDone] = useState<boolean>(false);
     const [visible,setVisible] = useState<boolean>(false);
     const scanner = useRef<QrScanner>();
-    const videoEl = useRef<HTMLVideoElement>(null);
-    const qrBoxEl = useRef<HTMLDivElement>(null);
+    const videoEl = useRef<HTMLVideoElement | null>(null);
+    const qrBoxEl = useRef<HTMLDivElement | null>(null);
     const [qrOn, setQrOn] = useState<boolean>(true);
     const [loading,setLoading] = useState(false);
   const onScanSuccess = ()=>{
@@ -30,7 +32,7 @@ export const CheckInModal = (props:UserProps & PageProps)=>{
     
   }
     useEffect(() => {
-      if (videoEl?.current && !scanner.current) {
+      if (videoEl.current && !scanner.current) {
         // 👉 Instantiate the QR Scanner
         scanner.current = new QrScanner(videoEl?.current, onScanSuccess, {
           onDecodeError:onScanFailed,
@@ -41,7 +43,7 @@ export const CheckInModal = (props:UserProps & PageProps)=>{
           // 🔥 This will produce a yellow (default color) outline around the qr code that we scan, showing a proof that our qr-scanner is scanning that qr code.
           highlightCodeOutline: true,
           // 📦 A custom div which will pair with "highlightScanRegion" option above 👆. This gives us full control over our scan region.
-          overlay: qrBoxEl?.current || undefined,
+          overlay: qrBoxEl.current || undefined,
         });
   
         // 🚀 Start QR Scanner
@@ -60,7 +62,7 @@ export const CheckInModal = (props:UserProps & PageProps)=>{
       // 🧹 Clean up on unmount.
       // 🚨 This removes the QR Scanner from rendering and using camera when it is closed or removed from the UI.
       return () => {
-        if (!videoEl?.current) {
+        if (!videoEl.current) {
           scanner?.current?.stop();
         }
       };

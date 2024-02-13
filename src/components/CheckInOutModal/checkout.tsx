@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
 import { ScannerMarker, SuccessIcon } from "../../assets/icons";
 import { CloseIcon } from "../../assets/icons/CloseIcon";
