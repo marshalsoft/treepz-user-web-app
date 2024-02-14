@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useRef, useState } from 'react'
 import { Logo } from '../../components/Logo'
 import { LogoDesign } from '../../components/LogoDesign'

@@ -37,7 +37,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -54,4 +57,5 @@
   "devDependencies": {
     "@types/react-toastify": "^4.1.0"
   }
+ 
 }
