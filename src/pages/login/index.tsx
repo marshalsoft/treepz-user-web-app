@@ -31,6 +31,7 @@ export default function LoginScreen() {
     })
   }
   useEffect(() => {
+    window.scrollTo(0, 1);
     setTimeout(() => {
       setSwitchPage(true);
       localStorage.setItem("login","1")

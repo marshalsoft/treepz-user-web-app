@@ -38,6 +38,7 @@ export default function DashboardScreen() {
     })
   }
   useEffect(()=>{
+    window.scrollTo(0, 1);
     GetUserData();
     GetData();
   },[])
