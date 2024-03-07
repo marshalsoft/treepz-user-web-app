@@ -36,7 +36,7 @@ export default function LoginScreen() {
       localStorage.setItem("login","1")
     }, 2000)
   }, [])
-  if(localStorage.getItem("token"))
+  if(localStorage.getItem("userdata"))
   {
    return <Navigate to={"/"+CONSTANTS.Routes.Dashboard} replace={true} />
   }

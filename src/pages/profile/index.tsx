@@ -155,7 +155,7 @@ initialValues={{
         >Save changes</BaseButton>
         <div className='center pt-3' >
           <span className='error' onClick={()=>{
-            localStorage.clear();
+            localStorage.removeItem("userdata");
             navigate("/"+CONSTANTS.Routes.Login);
           }}>Log Out</span>
         </div>
