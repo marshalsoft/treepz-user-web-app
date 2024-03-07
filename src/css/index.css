@@ -12,9 +12,9 @@ code {
     monospace;
 }
 .fullscreen{
-  height: 100vh;
+  margin: auto;
+  height: 100%;
   width: 100vw;
-  margin: 0px;
   display: flex;
   justify-content: center;
   align-items: center;

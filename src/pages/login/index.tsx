@@ -55,8 +55,8 @@ export default function LoginScreen() {
       }}
     >
       {({ handleSubmit, handleChange, values }) => <div className='' >
-        <div  >
-          <div className="text-center title-text fw-bold">Welcome back 😊</div>
+        <div className='text-center pt-5' >
+          <div className="title-text fw-bold">Welcome back 😊</div>
           <div className="text-center">Let's pick things up from where you left it</div>
           <div className='row pt-5' >
             <div className='col-12' >

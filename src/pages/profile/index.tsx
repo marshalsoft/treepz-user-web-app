@@ -10,10 +10,11 @@ import { BaseButton, LightYellowButton } from '../../components/buttons'
 import { Formik } from 'formik';
 import * as y from 'yup';
 import { GoBackIcon } from '../../assets/icons/BackIcon'
-import { PostRequest } from '../../includes/functions'
+import { GetRequest, PostRequest } from '../../includes/functions'
 import { BackBtn } from '../../components/BackBtn'
 import { PageProps, UserProps } from '../../includes/types'
 import { BlackCallIcon, BlackChatIcon, CallIcon } from '../../assets/icons'
+import { BaseLoader } from '../../components/baseloader'
 const schema = y.object({
   firstname:y.string().required("First name is required."),
   lastname:y.string().required("Last name password is required."),
@@ -22,10 +23,24 @@ const schema = y.object({
 export default function ProfileScreen(props:PageProps) {
   const navigate = useNavigate();
   const [loading,setLoading] = useState(false);
+  const [fetching,setFetching] = useState(true);
   const [user,setUser] = useState<UserProps>({});
+  const getEmployeeData = ()=>{
+    setFetching(true);
+    GetRequest("employee",{}).then((res)=>{
+      // setFetching(false);
+    })
+  }
   useEffect(()=>{
-   
+   getEmployeeData();
   },[])
+  if(fetching)
+  {
+    return <div className='p-3' >
+      <BaseLoader />
+      <span className='px-2'>Fetching data...</span>
+    </div>
+  }
   return (<div className='modal-full' >
   <Formik
 onSubmit={(values)=>{
