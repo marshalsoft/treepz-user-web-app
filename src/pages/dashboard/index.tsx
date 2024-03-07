@@ -62,10 +62,10 @@ export default function DashboardScreen() {
       <span className='px-2'>Fetching data...</span>
     </div>
   }
-  if(!localStorage.getItem("userdata"))
-  {
-   return <Navigate to={"/"+CONSTANTS.Routes.Login} />
-  }
+  // if(!localStorage.getItem("userdata"))
+  // {
+  //  return <Navigate to={"/"+CONSTANTS.Routes.Login} />
+  // }
   return (<div className='container p-4' >
     <div >
     <div className='row pb-3' >
