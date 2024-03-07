@@ -17,36 +17,30 @@ otp:y.string().required().max(4,"OTP must be 4 characters.").min(4,"OTP must be 
 export default function OTPScreen() {
  const [loading,setLoading] = useState(false);
  const [resetloading,setResetLoading] = useState(false);
- const [timer, setTime] = useState<number>(0);
  const max:number = 30;
+ const [timer, setTime] = useState<number>(max);
  const TimeCounter = useRef(null) as any;
  const CountDown = ()=>{
-  if(timer !== 0)
-  {
-    return ;
-  }
+ 
   TimeCounter.current = setInterval(()=>{
-    if(timer === max)
+    setTime((timer)=>{
+      if(timer === 0)
     {
-    setTime((timer)=>0);
-    clearInterval(TimeCounter.current);
-    return ;
+      clearInterval(TimeCounter.current);
+      return 0;
     }
-    setTime((timer)=>timer+1);
+     return timer-1;
+    });
   },1000)
  }
 
  const ResendOTP = ()=>{
   setResetLoading(true);
-  CountDown();
   PostRequest("admin/forgot-password",{
     email:localStorage.getItem(CONSTANTS.Routes.ForgotPassword)
   },true).then((res)=>{
+    CountDown();
     setResetLoading(false);
-    if(res.success)
-    {
-      window.location.href = "/"+CONSTANTS.Routes.CreatePassword
-    }
    })
  }
 
@@ -92,7 +86,7 @@ initialValues={{
         <div className="text-start title-text">Verify email address</div>
         <div className="text-start">Please enter the OTP we sent to your email address to proceed</div>
         <div className='row p-5 ps-0' >
-        <div className='col-8' >
+        <div className='col-8 text-center' >
         <div className='text-center d-flex justify-content-center align-items-center' >
         <OTPInput
         value={values.otp} 

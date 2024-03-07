@@ -56,8 +56,8 @@ export default function LoginScreen() {
       }}
       validationSchema={schema}
       initialValues={{
-        email: "marshall@treepz.com",
-        password: "123456"
+        email: "coddapp.tech@gmail.com",
+        password: "12345"
       }}
     >
       {({ handleSubmit, handleChange, values }) => <div className='' >

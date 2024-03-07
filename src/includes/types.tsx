@@ -27,6 +27,7 @@ export interface UserProps {
     firstname?:string;
     lastname?:string;
     email?:string;
+    employeeId?:string;
 }
 export interface PageProps {
     goBack?:()=>void;

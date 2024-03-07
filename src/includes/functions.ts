@@ -114,14 +114,11 @@ fetch(`${CONSTANTS.BaseURL}${uri}${params}`,options).then((res)=>res.json()).the
     } catch (error) {
         
     }
+  }
     resolve(res)
-    }else{
-    toast.error(res.message, {
-      position:"top-center"
-     });  
-     resolve(res)
-    }
 }).catch((e)=>{
+  if(success)
+  {
     toast.error(e.message, {
         position:"top-center"
        });
@@ -130,6 +127,7 @@ fetch(`${CONSTANTS.BaseURL}${uri}${params}`,options).then((res)=>res.json()).the
         message:e.message,
         data:{}
     }) 
+  }
 })
 })
 }

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Switzer";
+    src: url(../assets/fonts/Switzer/Switzer-Regular.ttf);
+  }
+  body{
+    font-family: 'Switzer', sans-serif;
+  }

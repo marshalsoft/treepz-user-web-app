@@ -22,7 +22,7 @@ otp:y.string().required().max(4,"OTP must be 4 characters.").min(4,"OTP must be 
 export default function ResetPasswordScreen() {
   const navigate = useNavigate();
   const [loading,setLoading] = useState(false);
-  const [section,setSection] = useState<"token"|"forgot-password"|"new-password">("new-password");
+  const [section,setSection] = useState<"token"|"forgot-password"|"new-password">("forgot-password");
   const [timer, setTime] = useState<number>(0);
   const [email, setEmail] = useState<string>("");
   const max:number = 30;
@@ -90,7 +90,7 @@ onSubmit={(values)=>{
         }}
         />
       <div className="text-start fw-bold pt-3 ">Enter OTP</div>
-        <div className="text-start sub">Enter the OTP we sent to <br/><b>heresanexample@email.com</b>:</div>
+        <div className="text-start sub">Enter the OTP we sent to <br/><b>{email}</b>:</div>
        <div className='row pt-5' >
           <div className='col-12' >
           <OtpInput
@@ -149,6 +149,7 @@ goBack={()=>{
   <Formik
 onSubmit={(values)=>{
  setLoading(true);
+ setEmail(values.email)
  PostRequest("admin/forgot-password",values,true).then((res)=>{
   setLoading(false);
   if(res.success)
