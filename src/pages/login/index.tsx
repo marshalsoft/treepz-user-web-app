@@ -4,7 +4,7 @@ import { Logo } from '../../components/Logo'
 import { LogoDesign } from '../../components/LogoDesign'
 import { PoweredByComponent } from '../../components/PoweredBy'
 import BaseInput from '../../components/baseInput'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, Navigate, useNavigate } from 'react-router-dom'
 import { CONSTANTS } from '../../includes/constant'
 import { BaseButton } from '../../components/buttons'
 import { Formik } from 'formik';
@@ -26,7 +26,7 @@ export default function LoginScreen() {
     PostRequest("admin/login", values).then((response) => {
       setLoading(false);
       if (response.success) {
-        navigate("/" + CONSTANTS.Routes.Dashboard);
+        navigate("/" + CONSTANTS.Routes.Dashboard,{ replace: true });
       }
     })
   }
@@ -36,6 +36,10 @@ export default function LoginScreen() {
       localStorage.setItem("login","1")
     }, 2000)
   }, [])
+  if(localStorage.getItem("token"))
+  {
+   return <Navigate to={"/"+CONSTANTS.Routes.Dashboard} replace={true} />
+  }
   if (!swithPage && !localStorage.getItem("login")) {
     return <div className='fullscreen' style={{backgroundColor:"black"}}>
      <div className='text-center' >

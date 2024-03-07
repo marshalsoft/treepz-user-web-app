@@ -28,7 +28,11 @@ export default function ProfileScreen(props:PageProps) {
   const getEmployeeData = ()=>{
     setFetching(true);
     GetRequest("employee",{}).then((res)=>{
-      // setFetching(false);
+      setFetching(false);
+      if(res.success)
+      {
+        setUser(res.data);
+      }
     })
   }
   useEffect(()=>{
@@ -36,7 +40,7 @@ export default function ProfileScreen(props:PageProps) {
   },[])
   if(fetching)
   {
-    return <div className='p-3' >
+    return <div className='modal-full p-3' >
       <BaseLoader />
       <span className='px-2'>Fetching data...</span>
     </div>
