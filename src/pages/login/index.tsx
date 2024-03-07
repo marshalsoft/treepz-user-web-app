@@ -10,6 +10,7 @@ import { BaseButton } from '../../components/buttons'
 import { Formik } from 'formik';
 import * as y from 'yup';
 import { PostRequest } from '../../includes/functions';
+import { BaseLoader } from '../../components/baseloader'
 
 const schema = y.object({
   email: y.string().required().email("A valid email is required."),
@@ -32,14 +33,19 @@ export default function LoginScreen() {
   useEffect(() => {
     setTimeout(() => {
       setSwitchPage(true);
-    }, 1500)
+      localStorage.setItem("login","1")
+    }, 2000)
   }, [])
-  if (!swithPage) {
-    return <div className='fullscreen'>
+  if (!swithPage && !localStorage.getItem("login")) {
+    return <div className='fullscreen' style={{backgroundColor:"black"}}>
+     <div className='text-center' >
+     <BaseLoader
+     color='yellow'
+     />
       <div className='logo-wrp'>
         <Logo
-
         />
+        </div>
       </div>
     </div>
   }
